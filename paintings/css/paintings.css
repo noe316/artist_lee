@@ -1,0 +1,282 @@
+/*	basic */
+	* {
+		box-sizing: border-box;
+	}
+
+	::selection {
+		background: cyan;
+	}
+
+	#container-wrap {
+		padding: 20px 0 0;
+		font-family: "Noto Sans KR", sans-serif;
+	}
+
+	header {
+		margin: 0 auto 20px;
+		/*filter: invert(100%);*/
+	}
+
+	header h1 {
+		font-family: 'Anton', sans-serif;
+		font-size: 18px;
+		display: none;
+	}
+
+	.h-right button .menubar {
+		background: #ccc;
+		transition: .4s;
+	}
+
+	.ham.on .menubar {
+		background: #fff;
+		transition: .4s;
+	}
+
+
+	.paintings-wrap {
+		width: 70vw;
+		margin: 0 auto;
+		padding-top: 120px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	/*	res */
+		@media screen and (max-width: 1024px) {
+			.paintings-wrap {
+				width: 80vw;
+			}
+		}
+
+		@media screen and (max-width: 640px) {
+			.paintings-wrap {
+				display: block;
+				padding-top: 40px;
+			}
+		}
+
+/*	painting-title */
+	.painting-title {
+			font-family: 'Anton', sans-serif;
+			position: relative;
+			width: 100%;
+		}
+
+		.painting-title > em {
+			font-size: 23px;
+			color: #aaa;
+			position: absolute;
+			left: 23%;
+			top: 20%;
+			letter-spacing: .5em;
+			transform: rotate(90deg);
+			font-family: "Noto Sans KR", "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+
+		}
+		.t-effect p {
+			color: #363031;
+			text-align: right;
+			opacity: 0.9;
+			max-width: 1920px;
+		}
+
+		.t-effect em {
+			font-size: 28vw;
+			white-space: nowrap;
+			line-height: .9em;
+			display: inline-block;
+		}
+
+		.painting-title > span {
+			font-size: 5vw;
+			position: absolute;
+			top: 76%;
+			left: 20%;
+			color: #C50000;
+			filter: opacity(0.7);
+		}
+
+		/*	res */
+			@media screen and (max-width: 640px) {
+				.painting-title {
+					padding-top: 40px;
+				}
+
+				.t-effect p {
+					text-align: center;
+				}
+			}
+/*	blockqute */
+	blockquote {
+		font-size: 16px;
+	}
+
+
+	/*	res */
+		@media screen and (max-width: 414px) {
+			blockquote {
+				font-size: 14.5px;
+			}
+		}
+
+/*	left */
+	.left-paintinglist {
+		width: 15vw;
+		position: relative;
+		z-index: 11;
+	}
+
+	.left-paintinglist.z-in {
+		z-index: 1;
+	}
+
+	.left-paintinglist ul {
+		position: sticky;
+		top: 20px;
+	}
+
+	.left-paintinglist li {
+		font-size: 18px;
+		position: relative;
+	}
+
+	.left-paintinglist .sign::before {
+		content: "";
+		display: block;
+		height: 8px;
+		width: 8px;
+		/*border-radius: 50%;*/
+		background: red;
+		position: absolute;
+		top: 50%;
+		left: -20px;
+		transform: translateY(-50%);
+	}
+
+	.left-paintinglist a {
+		color: #999;
+	}
+
+	.left-paintinglist a:hover {
+		color: #C50000;
+	}
+
+	/*	res */
+		@media screen and (max-width: 640px) {
+			.left-paintinglist li {
+				font-size: 16px;
+			}
+
+			.left-paintinglist {
+				width: 100%;
+				padding: 0 0 20px;
+			}
+
+			.left-paintinglist ul {
+				width: 100%;
+				display: flex;
+				justify-content: space-around;
+			}
+
+			.left-paintinglist .sign::before {
+				width: 6px;
+				height: 6px;
+				left: -12px;
+			}
+		}
+
+		@media screen and (max-width: 412px) {
+			.left-paintinglist .sign::before {
+				left: -9px;
+			}
+		}
+
+
+/*	right */
+	
+	.right-paintingimg {
+		width: 100%;
+	}
+
+	.right-paintingimg a:hover {
+		color: #C50000;
+	}
+
+	.wrap1 {
+		width: 100%;
+		float: left;
+		margin-bottom: 40px;
+	}
+
+	.paintingimg-wrap figure {
+		width: 100%;
+		display: block;
+		padding-top: 40px;
+	}
+
+	.wrap1 figure:first-child {
+		padding-top: 0;
+	}
+
+	.paintingimg-wrap a {
+		display: block;
+		height: 100%;
+		text-align: right;
+	}
+
+	.paintingimg-wrap img {
+		width: 100%;
+	}
+
+	.paintingimg-wrap figcaption {
+		opacity: .5;
+		font-size: 15px;
+	}
+
+	/*	lightbox */
+		.lb-data .lb-details {
+			width: 100%;
+			text-align: right;
+		}
+
+		.lb-data .lb-caption {
+			color: #fff;
+			font-weight: 400;
+		}
+
+		.lb-data .lb-number {
+			font-size: 11px;
+		}
+
+		.lb-data .lb-close {
+			background: none;
+		}
+
+		/*	res */
+			@media screen and (max-width: 640px) {
+				.right-paintingimg {
+					width: 100%;
+				}
+
+				.paintingimg-wrap figcaption {
+					font-size: 14.5px;
+				}
+			}
+
+
+/*	footer */
+	footer {
+			position: relative;
+			right: 0;
+			width: 90%;
+			margin: 30px auto 15px;
+		}
+
+		@media screen and (max-width: 640px) {
+			footer span {
+				display: none;
+			}
+		}
+
+

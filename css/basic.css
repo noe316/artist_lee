@@ -1,0 +1,293 @@
+/*	body */ 
+
+
+ a {
+ 	color: #444;
+ }
+
+
+
+/*	header */
+	header {
+		width: 90vw;
+		margin: 0 auto;
+		position: fixed;
+		z-index: 10;
+	}
+
+	nav {
+		/*background: url(../img/menubg.png) no-repeat center center / cover;*/
+		position: fixed;
+		min-width: 100%;
+		/*min-height: 100vh;*/
+		top: 0;
+		bottom: 0;
+		left: 100%;
+		right: 100%;
+		padding: 10% 0;
+		display: flex;
+		color: #fff;
+		justify-content: center;
+		transition: .5s;
+		opacity: 0;
+	}
+
+	nav.on {
+		right: 0;
+		left: 0;
+		opacity: 1;
+		transition: .5s;
+		overflow-y: scroll;
+	}
+
+	nav a {
+		color: #fff;
+		transition: .4s;
+		opacity: .7;
+	}
+
+	nav a:hover {
+		opacity: 1;
+		color: #fff;
+		transition: .4s;
+	}
+
+	.menu-set {
+		width: 60vw;
+		font-family: 'Anton', sans-serif;
+		text-transform: uppercase;
+		font-size: 100px;
+		letter-spacing: .05em;
+		line-height: 1em;
+		text-align: center;
+		position: relative;
+		line-height: 1.4em;
+		/*overflow-y: scroll;*/
+	}
+
+	.menu-set > li {
+		/*-webkit-text-shadow: 20px 20px 20px rgba(0,0,0,0.3);
+		-moz-text-shadow: 20px 20px 20px rgba(0,0,0,0.3);
+		text-shadow: 20px 20px 20px rgba(0,0,0,0.3);*/
+		transition: .4s;
+	}
+
+	.menu-contact {
+		width: 220px;
+		font-size: 18px;
+	}
+
+	.menu-contact h2 {
+		margin-bottom: 1.2em;
+		/*-webkit-text-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+		-moz-text-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+		text-shadow: 10px 10px 10px rgba(0,0,0,0.3);*/
+	}
+
+	.menu-contact img {
+		width: 18px;
+		height: auto;
+		margin-right: 4px;
+	}
+
+	.header-wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	/*	paintingsmenu */
+		.paintingsmenu {
+			display: none;
+			/*padding-bottom: 50px;*/
+
+		}
+
+		.paintingsmenu .back {
+			font-size: 1rem;
+			font-family: 'Roboto', sans-serif;
+			position: relative;
+		}
+
+		.paintingsmenu.on {
+			display: block;
+		}
+
+		.mainmenu.off {
+			display: none;
+		}
+
+	/*	ham btn */
+		.h-right {
+		}
+
+		.h-right button {
+			cursor: pointer;
+			position: relative;
+			z-index: 100;
+			}
+
+		.h-right button .menubar {
+			display: block;
+			width: 20px;
+			height: 2px;
+			margin: 6px auto;
+			background: #fff;
+			transition: 0.4s;
+		}
+
+			.h-right button span.on {
+				/*background: #444;*/
+			}
+
+
+		.h-right .ham.on .menubar-top {
+			transform: translateY(4px) rotateZ(45deg);
+			transition: 0.4s;
+		}
+
+		.h-right .ham.on .menubar-bt {
+			transform: translateY(-4px) rotateZ(-45deg);
+			transition: 0.4s;
+		}
+
+	/*	video bg */
+		.video-wrap {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 200%;
+			right: 200%;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			filter: brightness(40%);
+			z-index: -1;
+			opacity: 0;
+			transition: .4s ease-in-out;
+		}
+
+		.video-wrap.on {
+			left: 0;
+			right: 0;
+			opacity: 1;
+			transition: .4s ease-in-out;
+		}
+
+		.video-wrap video {
+			display: block;
+			position: absolute;
+			min-width: 100vw;
+			min-height: 100vh;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			z-index: -1;
+		}
+
+	/*	res */
+		@media screen and (max-width: 1440px) {
+			.menu-set {
+				font-size: 80px;
+			}
+
+			.paintingsmenu {
+				font-size: 64px;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			nav {
+				display: block;
+				padding: 15% 0;
+			}
+
+			nav a {
+				opacity: 1;
+			}
+
+			.menu-set, .menu-contact {
+				width: 100%;
+				text-align: center;
+			}
+
+			.menu-set {
+				font-size: 12vw;
+			}
+
+			.menu-contact a {
+				display: block;
+			}
+
+			.menu-contact h2 {
+				font-size: 22px;
+				margin: 3em 0 1em;
+			}
+
+			.menu-contact a {
+				font-size: 16px;
+			}
+		}
+
+		@media screen and (max-width: 412px) {
+			nav {
+				padding: 30% 0;
+			}
+
+			.h-right button {
+				transform: scale(1.5);
+			}
+
+			.menu-contact h2 {
+				font-size: 16px; 
+			}
+
+			.menu-contact a {
+				font-size: 14.5px; 
+			}
+		}
+
+
+
+/*	footer */
+	footer {
+			width: 100%;
+			font-weight: 100;
+			font-size: 11px;
+			line-height: 1em;
+			width: auto;
+			/*margin: 0 auto;*/
+			margin: 15px 0;
+			position: fixed;
+			bottom: 0;
+			right: 20px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+
+
+	@media screen and (max-width: 800px) {
+		footer {
+			width: 80vw;
+			right: 0;
+			left: 0;
+			margin: 10px auto;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
