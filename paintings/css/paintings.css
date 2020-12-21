@@ -51,6 +51,7 @@
 
 		@media screen and (max-width: 640px) {
 			.paintings-wrap {
+				width: 90vw;
 				display: block;
 				padding-top: 40px;
 			}
