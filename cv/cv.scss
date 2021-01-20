@@ -1,0 +1,335 @@
+@import "../mixins";
+
+// basic set
+    $low-gray : #aaa;
+    $low-white : #ccc;
+    $white : #fff;
+    $red : #C50000;
+    $font-anton : 'Anton', sans-serif;
+    $font-noto : "Noto Sans KR", "Malgun Gothic", "맑은 고딕", dotum, 돋움, sans-serif;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    ::selection {
+        background: cyan;
+    }
+
+// contents
+    #container-wrap {
+        padding: 20px 0 0;
+        
+        header {
+            margin: 0 auto 20px;
+
+            .h-left {        
+                h1 {
+                    display: none;
+                }
+            }
+
+            .h-right {
+                .ham {
+                    .menubar {
+                        background: $low-white;
+                        transition: .4s;
+                    }
+                }
+                .ham.on {
+                    .menubar {
+                        background: $white;
+                        transition: .4s;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .cv-title {
+        font-family: $font-anton;
+        position: relative;
+        
+        > em {
+            font: {
+                size: 23px;
+                family: $font-noto;
+            };
+            color: $low-gray;
+            position: absolute;
+            left: 23%;
+            top: 23%;
+            letter-spacing: .5em;
+            transform: rotate(90deg);
+
+            @include mobile-m {
+                font-size: 18px;
+            }
+        }
+
+        > span {
+            @include mobile-m {
+                font-size: 32px;
+                top: 76%;
+            }
+
+            @include mobile-s {
+                font-size: 28px;
+            }
+        }
+
+        .t-effect {
+            p {
+                text-align: right;
+                opacity: .9;
+                max-width: 1920px;
+
+                em {
+                    font: {
+                        size: 28vw;
+                    }
+                    white-space: nowrap;
+                    line-height: .9em;
+                    display: inline-block;
+                }
+            }
+        }
+        span {
+            font: {
+                size: 5vw;
+            }
+            position: absolute;
+            top: 80%;
+            left: 25%;
+            color: $red;
+        }
+    }
+
+    .langmenu {
+        padding-left: 87%;
+
+        @include mobile-l {
+            padding-left: 80%;
+        }
+
+        @include mobile-m {
+            padding-top: 10px;
+        }
+
+        ul {
+            position: relative;
+            width: 60px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            
+            li {
+                cursor: pointer;
+                opacity: .5;
+                font: {
+                    size: 14.5px;
+                }
+
+                a {
+                    color: $red;
+                }
+
+                &:hover {
+                    opacity: 1;
+                } 
+            }
+
+            li.on {
+                font: {
+                    weight: 700;
+                };
+                opacity: 1;
+            }
+
+            li.lang-kr {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    height: 100%;
+                    width: 1px;
+                    margin-left: 50%;
+                    background: #555;
+                    position: absolute;
+                    top: 50%;
+                    left: 100%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            
+        }
+    }
+
+    .cv-contents {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 0 0 25%;
+        font-size: 16px;
+        display: none;
+
+        @include tablet {
+            width: 75%;
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
+
+        @include mobile-l {
+            font-size: 13.5px;
+        }
+
+        @include mobile-m {
+            width: 90%;
+        }
+
+        .cv-mainlist {
+            > li {
+                display: flex;
+                flex: 0 0 1;
+                padding: 20px 0;
+
+                @include tablet {
+                    display: block;
+                    padding: 15px 0;
+                }
+
+                .sticky-title {
+                    top: 10px;
+                    width: 30%;
+                    height: 100%;
+                    position: sticky;
+
+                    @include tablet {
+                        width: 100%;
+                    }
+                    h3 {
+                        width: 100%;
+                        height: 30px;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        color: #aaa;
+                        letter-spacing: .1em;
+                        padding: 15px 5% 0 0;
+
+                        @include tablet {
+                            width: 100%;
+                            display: inline;
+                            /*border: 2px solid #ccc;*/
+                            border-radius: 50%;
+                            background: rgba(255,255,255,0.9);
+                            padding: 10px;
+                            line-height: 1em;
+                        }
+
+                        @include mobile-l {
+                            line-height: 30px
+                        }
+                    }
+                }
+
+                .cv-sublist {
+                    width: 70%;
+
+                    @include tablet {
+                        width: 100%;
+                        padding: 10px 0 15px;
+                    }
+
+                    @include mobile-l {
+                        padding: 0 0 10px; 
+                    }
+
+                    > li {
+                        width: 100%;
+                        padding: 7px 0;
+
+                        @include tablet {
+                            padding: 0;
+                        }
+
+                        a {
+                            width: 100%;
+                            text-decoration: underline;
+                        }
+                        span {
+                            display: inline-block;
+                            width: 15%;
+                            letter-spacing: .1em;
+
+                            @include tablet {
+                                width: 20%;
+                            }
+
+                            @include mobile-l {
+                                display: block;
+                                padding: 8px 0 2px;
+                                color: #ccc;
+                            }
+
+                            @include mobile-m {
+                                width: 100%;
+                            }
+                        }
+
+                        span.vhidden {
+                            visibility: hidden;
+
+                            @include mobile-l {
+                                display: none;
+                            }
+                        } 
+
+                        em {
+                            font: {
+                                weight: 600;
+                            };
+                            text-decoration: line-through;
+
+                        }
+                        strong {
+                            font: {
+                                weight: 600;
+                            };
+                        }
+                    }
+                }
+
+                .cv-sublist.award span {
+                    @include desktop {
+                        letter-spacing: .1em;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    .cv-contents.on {
+        display: block;
+    }
+
+
+
+/*	footer */
+    footer {
+        position: relative;
+        right: 0;
+        width: 90%;
+        margin: 30px auto 15px;
+    }
+
+    @include mobile-l {
+        footer {
+            span {
+                display: none;
+
+            }
+        }
+    }
